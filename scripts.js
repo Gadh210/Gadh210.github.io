@@ -1,9 +1,7 @@
-//document.getElementById("demo").innerHTML = "https://gadh210.github.io/";
- 
-fetchText(); 
+fetchText();
 
 async function fetchText() {
-    let response = await fetch("https://www.windfinder.com/forecast/freire_araucania_chile");
+    let response = await fetch("https://www.windfinder.com/forecast/freire_araucania_chile", { mode: 'no-cors'});
 
     console.log(response.status); // 200
     console.log(response.statusText); // OK
@@ -15,6 +13,6 @@ async function fetchText() {
               str.indexOf('<span id="spotheader-spotname" class="spot-headline__large">') + 1,
               str.lastIndexOf('</span>'));
     } else {
-    	document.getElementById("Title").innerHTML = "404";
+    	document.getElementById("title").innerHTML = "404";
     }
 }
